@@ -1,15 +1,19 @@
 body {
   margin: 0;
   padding: 0;
-  width: 99vw;
+  width: 99.05vw;
   height: 100vh;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 10%;
   border: 5px solid black;
+  background-color: gray;
   box-sizing: border-box;
   margin: 0;
   display: flex;
@@ -31,14 +35,15 @@ body {
 
 .header #logo,
 .button {
-  border: 3px solid black;
+  border: 3px solid white;
+  color: white;
   cursor: pointer;
   padding: 0.5rem;
 }
 
 .header #logo {
   background-color: inherit;
-  color: black;
+  /* color: black; */
   box-shadow: none;
   transition: all 0.3s ease;
 }
@@ -56,18 +61,24 @@ body {
   background-color: rgb(255, 85, 85);
   box-shadow: rgb(31, 193, 27) 1px -1px, rgb(255, 217, 19) 2px -2px,
     rgb(255, 156, 85) 3px -3px, rgb(255, 85, 85) 4px -4px;
+  background-color: black;
+  color: white;
 }
 
 #projects:hover {
   background-color: rgb(255, 217, 19);
   box-shadow: rgb(31, 193, 27) 1px -1px, rgb(255, 217, 19) 2px -2px,
     rgb(255, 156, 85) 3px -3px, rgb(255, 85, 85) 4px -4px;
+  background-color: black;
+  color: white;
 }
 
 #drugs:hover {
   background-color: rgb(31, 193, 27);
   box-shadow: rgb(31, 193, 27) 1px -1px, rgb(255, 217, 19) 2px -2px,
     rgb(255, 156, 85) 3px -3px, rgb(255, 85, 85) 4px -4px;
+  background-color: black;
+  color: white;
 }
 
 .header #logo:hover {
@@ -93,6 +104,7 @@ body {
   flex-direction: column;
   row-gap: 0.5rem;
   align-items: center;
+  margin-top: 3.9rem;
 }
 
 #opener {
@@ -117,7 +129,7 @@ body {
   margin: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .project {
@@ -125,7 +137,7 @@ body {
   top: 2.5 rem;
   left: 2 rem; */
   border: 5px solid black;
-  /* width: 12rem; */
+  width: 12rem;
   height: 10rem;
 }
 
@@ -135,7 +147,6 @@ body {
 }
 
 .project-track {
-  width: 70%;
   display: grid;
 }
 
@@ -145,12 +156,16 @@ body {
   border: 5px solid blue;
   box-sizing: border-box;
   margin: 0;
+  display: flex;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   #aboutme,
   #projects,
   #drugs {
     display: none;
+  }
+  body {
+    width: 100vw;
   }
 }
