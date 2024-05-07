@@ -6,25 +6,26 @@
     <title>Himanshu Bhardwaj</title>
     <link rel="stylesheet" href="./folio.css" />
     <link rel="icon" href="./static/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Poppins:wght@300;400;500;600&family=VT323&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="header">
       <span id="logo">HB</span>
-      <div id="buttons">
-        <a>
-          <div class="button" id="aboutme">ABOUT ME</div>
-        </a>
-        <a>
-          <div class="button" id="projects">PROJECTS</div>
-        </a>
-        <a
-          id="drugs-link"
-          href="https://narcoticsindia.nic.in/"
-          target="_blank"
-        >
-          <div class="button" id="drugs">DRUGS</div>
-        </a>
-      </div>
+
+      <a class="button" id="aboutme"> ABOUT ME </a>
+      <a class="button" id="projects"> PROJECTS </a>
+      <a
+        id="drugs-link"
+        class="button"
+        href="https://narcoticsindia.nic.in/"
+        target="_blank"
+        >DRUGS
+      </a>
     </div>
     <div class="aboutme">
       <span id="opener">Hi, My name is <span id="name">Himanshu</span></span>
@@ -34,19 +35,10 @@
         C</span
       >
     </div>
-    <div class="projects">
-      <!-- Add scroller here in future if projects increase -->
-      <button id="prev-btn" class="navigation-buttons">&#8249;</button>
-      <div class="project-track">
-        <div id="all-in-one" class="project">All-In-One</div>
-        <div id="landing-page-1" class="project">Landing Page 1</div>
-        <div id="landing-page-2" class="project">Landing Page 2</div>
-      </div>
-      <button id="next-btn" class="navigation-buttons">&#8250;</button>
-    </div>
-    <div class="footer">
-      <div class="social-media-links">Social-Media-Links</div>
-      <div class="contact-me">Contact-Me-Form</div>
+    <div class="project-track">
+      <div class="projects" id="project-1">1</div>
+      <div class="projects" id="project-2">2</div>
+      <div class="projects" id="project-3">3</div>
     </div>
     <script src="./folio.js"></script>
   </body>

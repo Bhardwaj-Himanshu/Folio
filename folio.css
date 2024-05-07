@@ -1,171 +1,110 @@
+html {
+  margin: 0;
+  padding: 0;
+  /* border: 5px solid black; */
+  height: 100vh;
+}
+
 body {
   margin: 0;
   padding: 0;
-  width: 99.05vw;
-  height: 100vh;
-  /* box-sizing: border-box; */
+  width: inherit;
+  height: inherit;
+  /* border: 5px solid red; */
+  box-sizing: border-box;
+  background-color: lightgray;
 }
 
 .header {
+  width: 100%;
+  height: 5rem;
+  background: white;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  border-bottom: 1px solid black;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 10%;
-  border: 5px solid black;
-  background-color: gray;
+}
+
+#logo {
+  width: 20%;
+  height: 100%;
+  text-align: end;
+  font-size: xx-large;
+  font-weight: bold;
+  color: lightgray;
   box-sizing: border-box;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border: 5px solid lightgray;
+  transition: all 0.3s ease;
+  font-family: 'VT323';
 }
 
-.header #logo {
-  margin-left: 1rem;
-}
-
-.header #buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 40vw;
-  margin-right: 1rem;
-  /* box-sizing: content-box; */
-}
-
-.header #logo,
 .button {
-  border: 3px solid white;
-  color: white;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.header #logo {
-  background-color: inherit;
-  /* color: black; */
-  box-shadow: none;
-  transition: all 0.3s ease;
-}
-
-#aboutme,
-#projects,
-#drugs {
-  background-color: inherit;
-  box-shadow: none;
-  font-weight: lighter;
-  transition: all 0.3s ease;
-}
-
-#aboutme:hover {
-  background-color: rgb(255, 85, 85);
-  box-shadow: rgb(31, 193, 27) 1px -1px, rgb(255, 217, 19) 2px -2px,
-    rgb(255, 156, 85) 3px -3px, rgb(255, 85, 85) 4px -4px;
-  background-color: black;
-  color: white;
-}
-
-#projects:hover {
-  background-color: rgb(255, 217, 19);
-  box-shadow: rgb(31, 193, 27) 1px -1px, rgb(255, 217, 19) 2px -2px,
-    rgb(255, 156, 85) 3px -3px, rgb(255, 85, 85) 4px -4px;
-  background-color: black;
-  color: white;
-}
-
-#drugs:hover {
-  background-color: rgb(31, 193, 27);
-  box-shadow: rgb(31, 193, 27) 1px -1px, rgb(255, 217, 19) 2px -2px,
-    rgb(255, 156, 85) 3px -3px, rgb(255, 85, 85) 4px -4px;
-  background-color: black;
-  color: white;
-}
-
-.header #logo:hover {
-  background-color: black;
-  color: white;
-  box-shadow: rgb(31, 193, 27) 1px -1px, rgb(255, 217, 19) 2px -2px,
-    rgb(255, 156, 85) 3px -3px, rgb(255, 85, 85) 4px -4px;
-}
-
-#drugs-link,
-#projects-link,
-#aboutme-link {
+  width: 7rem;
+  height: 100%;
+  margin-right: 0.6rem;
+  color: lightgray;
+  box-sizing: border-box;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  font-weight: bold;
   text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'VT323';
+  font-size: larger;
+}
+
+#logo:hover,
+.button:hover {
+  border: 5px solid black;
+  background-color: lightgray;
+  color: black;
+  cursor: pointer;
 }
 
 .aboutme {
-  width: 100%;
-  height: 25%;
-  border: 5px solid red;
-  box-sizing: border-box;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.5rem;
-  align-items: center;
-  margin-top: 3.9rem;
-}
-
-#opener {
-  margin-top: 1rem;
+  margin-top: 6rem;
   font-size: x-large;
-}
-#middle {
-  font-size: larger;
-}
-#closer {
-  font-size: large;
-}
-#name {
-  font-weight: 800;
-}
-
-.projects {
-  width: 100%;
-  height: 45%;
-  border: 5px solid green;
-  box-sizing: border-box;
-  margin: 0;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.project {
-  /* position: relative;
-  top: 2.5 rem;
-  left: 2 rem; */
-  border: 5px solid black;
-  width: 12rem;
-  height: 10rem;
-}
-
-.navigation-buttons {
-  width: 10%;
-  height: 10%;
+  width: inherit;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'VT323';
 }
 
 .project-track {
-  display: grid;
-}
-
-.footer {
-  width: 100%;
-  height: 25%;
-  border: 5px solid blue;
-  box-sizing: border-box;
-  margin: 0;
+  width: inherit;
+  height: 10rem;
+  border: 5px solid yellow;
+  margin-top: 3rem;
   display: flex;
+  align-items: end;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
 }
 
-@media (max-width: 768px) {
-  #aboutme,
+.projects {
+  width: 3rem;
+  height: 3rem;
+  font-family: 'VT323';
+  text-align: center;
+  border: 5px solid orange;
+  transition: all 0.3s ease;
+}
+
+.projects:hover {
+  width: 10rem;
+  height: 10rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
   #projects,
-  #drugs {
+  #aboutme,
+  #drugs-link {
     display: none;
-  }
-  body {
-    width: 100vw;
   }
 }
