@@ -75,7 +75,7 @@ body {
 .project-track {
   width: inherit;
   height: 10rem;
-  border: 5px solid yellow;
+  border-bottom: 1px solid black;
   margin-top: 3rem;
   display: flex;
   align-items: end;
@@ -96,6 +96,30 @@ body {
   height: 10rem;
   box-sizing: border-box;
   cursor: pointer;
+}
+
+.project-hovered {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  font-size: x-large;
+}
+
+.project-hovered a {
+  text-decoration: none;
+  color: black;
+}
+
+.project-launch-button:hover {
+  border: 5px solid black;
+  transition: all 0.3s ease;
+}
+
+.project-launch-button:active {
+  background-color: black;
+  border: 5px solid white;
+  color: white;
+  transition: all 0.2s ease;
 }
 
 .footer {
