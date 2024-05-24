@@ -2,33 +2,16 @@ const input = document.getElementById('input');
 const inputBox = document.getElementById('input-box');
 const output = document.getElementById('output');
 
-const onetwothreechecker = (e, createdElement2, inputBoxValue) => {
-  if (e.key == 'Enter') {
-    console.log(inputBoxValue);
-    switch (inputBoxValue) {
-      case '1':
-        createdElement2.textContent = `${e.key}`;
-        break;
-
-      default:
-        break;
-    }
-  }
-};
-
 document.addEventListener('keydown', (e) => {
   if (e.code == 'Enter') {
     const createdElement0 = document.createElement('div');
     createdElement0.innerHTML = `<span>|->${inputBox.value}</span>`;
-    // const createdElement1 = document.createElement('div');
-    // createdElement1.textContent = inputBox.value;
-    // createdElement1.classList.add('input-text');
     output.appendChild(createdElement0);
     // Now here case when pairs will start
-    let createdElement2 = document.createElement('div');
+    let createdElement1 = document.createElement('div');
     switch (inputBox.value) {
       case 'help':
-        createdElement2.innerHTML = `You can use <span class="highlighted-text">clear</span>,<span class="highlighted-text">whoami</span>,<span class="highlighted-text">help</span>,<span class="highlighted-text">categories</span>`;
+        createdElement1.innerHTML = `You can use <span class="highlighted-text">clear</span>,<span class="highlighted-text">whoami</span>,<span class="highlighted-text">help</span>,<span class="highlighted-text">categories</span>`;
         break;
       case 'whoami':
         async function getIPAddress() {
@@ -42,32 +25,50 @@ document.addEventListener('keydown', (e) => {
           }
         }
         getIPAddress().then((ipAddress) => {
-          createdElement2.innerHTML = `I am you, and you are ${ipAddress}`;
+          createdElement1.innerHTML = `I am Himanshu, and you are ${ipAddress}`;
         });
         break;
       case 'clear':
         output.innerHTML = '';
         break;
       case 'categories':
-        createdElement2.innerHTML = `<div id='1'>1.Mariguana</div>
-                                    <div id='2'>2. Weed </div>
-                                    <div id='3'>3. Heroine </div>                    `;
-
-        document.addEventListener('keydown', (e) => {
-          onetwothreechecker(e, createdElement2, inputBox.value);
-        });
+        createdElement1.innerHTML = `<div id='1'class="bold">1.Marijuana</div>
+                                    <div id='2' class="bold">2. Cocaine </div>
+                                    <div id='3' class="bold">3. Heroine </div>`;
+        break;
+      case '1':
+        createdElement1.innerHTML = `<div class="category">
+                                      <img class="drug-image" src='../static/black_white_marijuana.jpg'>
+                                      <h4>Marijuana</h4>
+                                      <p>
+                                      Marijuana, also known as cannabis, is a psychoactive drug derived from the Cannabis plant. It contains THC (tetrahydrocannabinol), which is responsible for its mind-altering effects. Users often experience relaxation, euphoria, and altered sensory perceptions. While some use marijuana for recreational purposes, it also has medicinal applications, such as pain relief and reducing nausea in chemotherapy patients. However, it can impair short-term memory, coordination, and judgment, and its long-term effects are still being studied. Despite its increasing legalization and medical use, marijuana remains a controversial substance with both advocates and detractors.
+                                      </p>        
+                                      </div>`;
+        break;
+      case '2':
+        createdElement1.innerHTML = `<div class="category">
+                                      <img class="drug-image" src='../static/black_white_heroine.jpeg'>
+                                      <h4>Heroine</h4>
+                                      <p>
+                                      Heroin is a highly addictive opioid derived from morphine, a substance extracted from the opium poppy plant. It is often used illicitly for its intense euphoric effects, which occur rapidly after use. Heroin can be injected, snorted, or smoked, each method posing significant health risks. Chronic use can lead to severe physical and psychological dependence, with withdrawal symptoms that are particularly harsh. The use of contaminated needles for injection can also spread infectious diseases such as HIV and hepatitis. Heroin overdose is a critical risk, frequently resulting in respiratory failure and death.
+                                      </p>        
+                                      </div>`;
+        break;
+      case '3':
+        createdElement1.innerHTML = `<div class="category">
+                                      <img class="drug-image" src='../static/black_white_cocaine.jpg'>
+                                      <h4>Cocaine</h4>
+                                      <p>
+                                      Cocaine is a powerful stimulant drug made from the leaves of the coca plant native to South America. It is often found in powder form, which can be snorted, injected, or smoked (in the form of crack cocaine). Cocaine produces a short-lived, intense high that includes increased energy, alertness, and euphoria. However, it also has severe adverse effects such as heart attack, stroke, and violent behavior. The risk of addiction is high, and repeated use can lead to tolerance, requiring higher doses to achieve the same effects. Cocaine abuse also contributes to numerous social and legal problems, making it a significant public health concern.
+                                      </p>        
+                                      </div>`;
         break;
       default:
-        // document.removeEventListener(
-        //   'keydown',
-        //   createdElement2,
-        //   inputBox.value
-        // );
         output.removeChild(createdElement0);
-        createdElement2.innerHTML = `|x Add something from the help you high!`;
+        createdElement1.innerHTML = `<div>|x Looks like you were already high before entering the page, type <span class="highlighted-text">help</span>, but I don't think so you would be able to do that!</div>`;
         break;
     }
-    output.appendChild(createdElement2);
+    output.appendChild(createdElement1);
     inputBox.value = '';
   }
 });
