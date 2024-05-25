@@ -1,15 +1,17 @@
 const input = document.getElementById('input');
-const inputBox = document.getElementById('input-box');
+const editable = document.getElementById('editable');
 const output = document.getElementById('output');
 
 document.addEventListener('keydown', (e) => {
+  editable.focus();
   if (e.code == 'Enter') {
+    e.preventDefault();
     const createdElement0 = document.createElement('div');
-    createdElement0.innerHTML = `<span>|->${inputBox.value}</span>`;
+    createdElement0.innerHTML = `<span>${editable.textContent}</span>`;
     output.appendChild(createdElement0);
     // Now here case when pairs will start
     let createdElement1 = document.createElement('div');
-    switch (inputBox.value) {
+    switch (editable.textContent) {
       case 'help':
         createdElement1.innerHTML = `You can use <span class="highlighted-text">clear</span>,<span class="highlighted-text">whoami</span>,<span class="highlighted-text">help</span>,<span class="highlighted-text">categories</span>`;
         break;
@@ -20,12 +22,13 @@ document.addEventListener('keydown', (e) => {
             const data = await response.json();
             return data.ip;
           } catch (error) {
+            console.log('failure');
             console.error('Error fetching IP address:', error);
             throw error; // Re-throw the error to propagate it
           }
         }
         getIPAddress().then((ipAddress) => {
-          createdElement1.innerHTML = `I am Himanshu, and you are ${ipAddress}`;
+          createdElement1.textContent = `I am Himanshu, and you are ${ipAddress}`;
         });
         break;
       case 'clear':
@@ -65,10 +68,45 @@ document.addEventListener('keydown', (e) => {
         break;
       default:
         output.removeChild(createdElement0);
-        createdElement1.innerHTML = `<div>|x Looks like you were already high before entering the page, type <span class="highlighted-text">help</span>, but I don't think so you would be able to do that!</div>`;
+        createdElement1.innerHTML = `<div>Looks like you were already high before entering the page, type <span class="highlighted-text">help</span>, but I don't think so you would be able to do that!</div>`;
         break;
     }
     output.appendChild(createdElement1);
-    inputBox.value = '';
+    editable.textContent = '';
   }
 });
+
+// Add event listeners to update the caret position
+editable.addEventListener('input', updateCaretPosition);
+editable.addEventListener('click', updateCaretPosition);
+editable.addEventListener('keydown', updateCaretPosition);
+
+function updateCaretPosition() {
+  // Get the current selection
+  const selection = window.getSelection();
+
+  // Check if there is a valid selection and range
+  if (selection.rangeCount > 0) {
+    // Get the current range (caret position)
+    const range = selection.getRangeAt(0);
+
+    // Get the bounding rectangle of the range
+    const rect = range.getBoundingClientRect();
+
+    // Get the bounding rectangle of the contenteditable container
+    const containerRect = editable.getBoundingClientRect();
+
+    // Set CSS variables for the custom caret position
+    editable.style.setProperty(
+      '--caret-left',
+      `${rect.left - containerRect.left}px`
+    );
+    editable.style.setProperty(
+      '--caret-top',
+      `${rect.top - containerRect.top}px`
+    );
+  }
+}
+
+// Initialize caret position
+updateCaretPosition();

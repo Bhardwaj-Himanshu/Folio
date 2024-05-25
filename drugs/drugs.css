@@ -2,17 +2,62 @@ body {
   font-family: 'Pixelify Sans';
 }
 
-.createdElement0 {
+#input {
+  display: flex;
+  height: 1.5rem;
+  width: 20rem;
+  /* border: 1px solid red; */
 }
 
-.createdElement1 {
+#editable {
+  outline: none;
+  white-space: pre-wrap; /* Allow line breaks */
+  caret-color: transparent; /* Hide the default caret */
 }
 
-.createdElement2 {
+#editable::after {
+  content: '';
+  position: absolute;
+  background: red; /* Custom caret color */
+  width: 0.5rem;
+  height: 1.5rem;
+  animation: blink 1s steps(1) infinite;
 }
 
-#input-box {
-  width: 10rem;
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Update the custom caret position */
+#editable[data-caret]::after {
+  left: var(--caret-left);
+  top: var(--caret-top);
+}
+
+#caret {
+  display: inline-block;
+  width: 0.5rem;
+  height: 1.5rem;
+  background-color: black;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .drug-image {
@@ -27,4 +72,8 @@ body {
 
 .bold {
   font-weight: bold;
+}
+
+#email {
+  color: blue;
 }
