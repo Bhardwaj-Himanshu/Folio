@@ -12,14 +12,15 @@ body {
   height: inherit;
   /* border: 5px solid red; */
   box-sizing: border-box;
-  background-color: lightgray;
+  background-color: navy;
   text-align: center;
+  color: white;
 }
 
 .header {
   width: 100%;
   height: 5rem;
-  background: white;
+  background: black;
   display: flex;
   align-items: end;
   justify-content: center;
@@ -44,8 +45,9 @@ body {
 .button {
   width: 7rem;
   height: 100%;
-  margin-right: 0.6rem;
+  /* margin-right: 0.6rem; */
   color: lightgray;
+  border: 5px solid lightgray;
   box-sizing: border-box;
   display: flex;
   align-items: end;
@@ -62,6 +64,38 @@ body {
   background-color: lightgray;
   color: black;
   cursor: pointer;
+}
+
+#theme-toggler {
+  position: absolute;
+  right: 0;
+  border: 5px solid lightgray;
+  color: lightgray;
+  width: 3rem;
+  height: 3rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+#theme-toggler:hover {
+  border: 5px solid black;
+  background-color: lightgray;
+  color: black;
+  cursor: pointer;
+}
+
+#theme-svg {
+  width: 50%;
+  fill: lightgray;
+  aspect-ratio: 1/1;
+  transition: all 0.3s ease;
+}
+
+#theme-toggler:hover #theme-svg {
+  fill: black;
 }
 
 .aboutme {
@@ -110,6 +144,10 @@ body {
   color: black;
 }
 
+.project-launch-button {
+  color: white !important;
+}
+
 .project-launch-button:hover {
   border: 5px solid black;
   transition: all 0.3s ease;
@@ -137,15 +175,20 @@ body {
 .social-media-button {
   width: 1.5rem;
   height: 1.5rem;
-  border: 5px solid white;
+  border: 5px solid black;
   color: white;
   transition: all 0.2s ease;
 }
 
+.social-media-button a {
+  text-decoration: none;
+  color: white;
+}
+
 .social-media-button:hover {
   transform: scale(1.5);
-  border: 5px solid black;
-  color: black;
+  border: 5px solid white;
+  color: white;
   cursor: pointer;
 }
 
@@ -154,11 +197,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: white;
+  color: black;
 }
 
 .active {
-  color: black;
+  color: white;
 }
 
 @media (max-width: 767px) {
