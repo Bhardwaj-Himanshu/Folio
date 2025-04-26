@@ -135,7 +135,7 @@ body {
 .project-hovered {
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  row-gap: 1rem;
   font-size: x-large;
 }
 

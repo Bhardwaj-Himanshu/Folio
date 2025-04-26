@@ -87,15 +87,15 @@ projects.forEach((project, projectIndex) => {
       switch (projectIndex) {
         case 0:
           project.innerHTML =
-            '<span>1</span><span>All-In-One</span><a href="https://bhardwaj-himanshu.github.io/All-in-One/" target="_blank" class="project-launch-button">Launch</a>';
+            '<span>1</span><span>Forecast Engine</span><a href="https://salakssweet.streamlit.app/" target="_blank" class="project-launch-button">Launch</a>';
           break;
         case 1:
           project.innerHTML =
-            '<span>2</span><span>Landing Page-1</span><a href="https://bhardwaj-himanshu.github.io/MojoClick/" target="_blank" class="project-launch-button">Launch</a>';
+            '<span>2</span><span>Recommendation Engine</span><a href="https://bhardwaj-himanshu.github.io/All-in-One/jsRecommendationEngine/engine.html" target="_blank" class="project-launch-button">Launch</a>';
           break;
         case 2:
           project.innerHTML =
-            '<span>3</span><span>Landing Page-2</span><a href="https://bhardwaj-himanshu.github.io/EasyBank/" target="_blank" class="project-launch-button">Launch</a>';
+            '<span>3</span><span>All-in-One</span><a href="https://bhardwaj-himanshu.github.io/All-in-One/" target="_blank" class="project-launch-button">Launch</a>';
           break;
         default:
           break;
